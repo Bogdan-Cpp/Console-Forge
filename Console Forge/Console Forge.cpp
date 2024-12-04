@@ -23,6 +23,31 @@ int main() {
         std::cout << "-> ";
 
         std::getline(std::cin, command);
+        if (command.length() > 5) {
+            std::string cm = "";
+            std::string input = "";
+            bool isInput = false;
+            for (char x : command) {
+                if (x == '-') {
+                    isInput = true;
+                    continue;
+                }
+                if (isInput) {
+                    input += x;
+                }
+                else {
+                    cm += x;
+                }
+            }
+            
+            if (cm == "g" || cm == "google" || cm == "gos" || cm == "gs") {
+                std::wstring url10 = L"https://www.google.com/search?q=";
+                url10 += std::wstring(input.begin(), input.end());
+
+                ShellExecute(0, L"open", url10.c_str(), NULL, NULL, SW_SHOW);
+            }
+        }
+
         if (command == "?") {
             std::string search;
             std::string search2;
@@ -34,7 +59,7 @@ int main() {
             std::cout << "-> ?";
             SetConsoleTextAttribute(h, 7);
             std::getline(std::cin, search2);
-
+          
             if (search2 == "yt") {
                 std::wstring url = L"https://www.youtube.com/results?search_query=";
                 url += std::wstring(search.begin(), search.end());
@@ -111,7 +136,7 @@ int main() {
             std::cout << std::endl;
         }
         std::cout << std::endl;  
-    } while (command != "exit");
+    } while(command != "exit");
 
     system("pause");
     return 0;
