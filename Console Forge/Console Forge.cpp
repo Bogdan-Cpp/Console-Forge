@@ -80,18 +80,22 @@ int main() {
 
                 ShellExecute(0, L"open", url11.c_str(), NULL, NULL, SW_SHOW);
             }
+            //yt
             else if (command == "yt" || command == "youtube") {
                 ShellExecute(0, L"open", L"https://www.youtube.com", NULL, NULL, SW_SHOW);
             }
 
-            else if (command == "ai" || command == "chatgpt") {
-                ShellExecute(0, L"open", L"https://www.chatgpt.com", NULL, NULL, SW_SHOW);
-            }
-
+            //google suite
             else if (command == "mail" || command == "gmail") {
                 ShellExecute(0, L"open", L"https://mail.google.com/mail/u/0/#inbox", NULL, NULL, SW_SHOW);
             }
-
+            else if (command == "mp") {
+                ShellExecute(0, L"open", L"https://www.google.com/maps/", NULL, NULL, SW_SHOW);
+            }
+            else if (command == "gem" || command == "gemini" || command == "gm") {
+                ShellExecute(0, L"open", L"https://gemini.google.com/", NULL, NULL, SW_SHOW);
+            }
+            //others
             else if (command == "ws" || command == "whatsapp") {
                 ShellExecute(0, L"open", L"https://web.whatsapp.com/", NULL, NULL, SW_SHOW);
             }
@@ -103,7 +107,24 @@ int main() {
             else if (command == "lt" || command == "leetcode") {
                 ShellExecute(0, L"open", L"https://leetcode.com/", NULL, NULL, SW_SHOW);
             }
-            
+
+            else if (command == "ai" || command == "chatgpt") {
+                ShellExecute(0, L"open", L"https://www.chatgpt.com", NULL, NULL, SW_SHOW);
+            }
+            //mod2
+            else if (command == "cgos") {
+                Google gog;
+                gog.Seartch();
+            }
+            else if (command == "cgop") {
+                Google gog2;
+                gog2.pozeSearch();
+            }
+            else if (command == "cyts") {
+                yt youtube;
+                youtube.searchYt();
+            }
+
             else {
                 std::cout << "'" << command << "'";
                 SetConsoleTextAttribute(h, 8);
@@ -112,7 +133,6 @@ int main() {
                 std::cout << std::endl;
             }
         }
-        
         std::cout << std::endl;
     } while (command != "exit");
 
