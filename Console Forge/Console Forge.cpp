@@ -95,11 +95,29 @@ int main() {
             else if (command == "gem" || command == "gemini" || command == "gm") {
                 ShellExecute(0, L"open", L"https://gemini.google.com/", NULL, NULL, SW_SHOW);
             }
+            else if (command == "d" || command == "dr" || command == "drive" || command == "drv") {
+                ShellExecute(0, L"open", L"https://drive.google.com/drive/home", NULL, NULL, SW_SHOW);
+            }
+            else if (command == "tr" || command == "trans" || command == "translate") {
+                ShellExecute(0, L"open", L"https://translate.google.com/", NULL, NULL, SW_SHOW);
+            }
+            //google office
+            else if (command == "docs" || command == "gd") {
+                ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+            }
+            else if (command == "sh" || command == "sheets") {
+                ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+            }
+            else if (command == "pt" || command == "presentation") {
+                ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+            }
             //others
             else if (command == "ws" || command == "whatsapp") {
                 ShellExecute(0, L"open", L"https://web.whatsapp.com/", NULL, NULL, SW_SHOW);
             }
-
+            else if (command == "nt" || command == "notion" || command == "not") {
+                ShellExecute(0, L"open", L"https://www.notion.so/", NULL, NULL, SW_SHOW);
+            }
             else if (command == "gh" || command == "github") {
                 ShellExecute(0, L"open", L"https://github.com/", NULL, NULL, SW_SHOW);
             }
