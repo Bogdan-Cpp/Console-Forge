@@ -4,6 +4,7 @@
 #include "GoogleSeartch.h"
 #include "yt.h";
 #include <vector>
+#include <conio.h>
 
 int main() {
     SetConsoleTitle(L"Console Forge");
@@ -12,9 +13,13 @@ int main() {
     std::vector<std::string> srh1 = { "g", "g ", "gl", "gl ", "gog", "gog ", "google", "google ", "google search", "google search "};
     std::vector<std::string> srh2 = { "gp", "gp ", "gop", "gop ", "google photo", "google photo "};
     std::vector<std::string> srh3 = { "yts", "yts ", "youtube search", "youtube search " };
+    std::vector<std::string> gogOption = {"Google Docs", "Google Sheets", "Google Slides", "Search on Google",
+                                          "YouTube", "Google Gemini", "Google Email", "Google Meet", "Google Drive", "Exit"};
     bool isGogSearch = false;
     bool isGogPhoto = false;
     bool isYt = false;
+    int selectie = 0;
+    bool isSelected = false;
     std::cout << "\n";
 
     do {
@@ -142,7 +147,64 @@ int main() {
                 yt youtube;
                 youtube.searchYt();
             }
+            //meniu
+            else if (command == "gmeniu") {
+                isSelected = true;
+                while (isSelected) {
+                    system("cls");
+                    SetConsoleTextAttribute(h, 3);
+                    std::cout << "Console Forge ";
 
+                    SetConsoleTextAttribute(h, 6);
+                    std::cout << "- 1.1v \n";
+                    std::cout << "\n";
+
+                    SetConsoleTextAttribute(h, 16);
+                    std::cout << "Google meniu selection" << "\n";
+                    SetConsoleTextAttribute(h, 7);
+
+                    for (int r = 0; r < gogOption.size(); r++) {
+                        if (r == selectie) {
+                            SetConsoleTextAttribute(h, 94);
+                            std::cout << "->" << gogOption[r] << "\n";
+                            SetConsoleTextAttribute(h, 7);
+                        }
+                        else {
+                            std::cout << " " << gogOption[r] << "\n";
+                        }
+                    }
+                    int tasta = _getch();
+
+                    switch (tasta) {
+                       case 72:
+                           selectie = (selectie - 1 + gogOption.size()) % gogOption.size();
+                           break;
+                       case 80:
+                           selectie = (selectie + 1) % gogOption.size();
+                           break;
+                       case 13:
+                           if (gogOption[selectie] == "Google Docs") {
+                               ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+                               break;
+                           }
+                           else if (gogOption[selectie] == "Exit") {
+                               isSelected = false;
+                           }
+                           else if (gogOption[selectie] == "Google Sheets") {
+                               ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+                           }
+                           else if (gogOption[selectie] == "Google Slides") {
+                               ShellExecute(0, L"open", L"https://docs.google.com/", NULL, NULL, SW_SHOW);
+                           }
+                           else if (gogOption[selectie] == "YouTube") {
+                               ShellExecute(0, L"open", L"https://www.youtube.com", NULL, NULL, SW_SHOW);
+                           }
+                           else if (gogOption[selectie] == "Google Gemini") {
+                               ShellExecute(0, L"open", L"https://gemini.google.com/", NULL, NULL, SW_SHOW);
+                           }
+                    }
+                }
+            }
             else {
                 std::cout << "'" << command << "'";
                 SetConsoleTextAttribute(h, 8);
