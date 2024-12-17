@@ -11,16 +11,15 @@
 
 #endif
 int main(){
- 
-    #ifdef _WIN32
-    main_win();
+  #ifdef _WIN32
+  main_win();
 
-    #elif __linux__
-    main_lin();
+  #elif __linux__
+  main_lin();
 
-    #elif __apple__
-    main_mac();
+  #elif __apple__
+  main_mac();
 
-    #endif
-    return 0;
+  #endif
+  return 0;
 }
