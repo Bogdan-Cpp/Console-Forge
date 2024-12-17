@@ -1,6 +1,10 @@
 #include <iostream>
+
+#ifdef _WIN32
 #include <windows.h>
 #include <conio.h>
+
+#endif
 #include <string>
 
 int main(){
@@ -24,24 +28,28 @@ int main(){
     }while(command != "exit");
     
     #elif __linux__
-    SetConsoleTitle("Console Forge");
     std::string command;
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
     
     do{
       std::cout << '\n';
-      SetConsoleTextAttribute(h, 3);
       std::cout << "Console Forge ";
 
-      SetConsoleTextAttribute(h, 6);
       std::cout << " - Linux \n";
 
-      SetConsoleTextAttribute(h, 7);
       std::cout << "-> ";
 
       std::getline(std::cin, command);
     }while(command != "exit");
-    
+
+    #elif __APPLE__
+     std::cout << '\n';
+     std::cout << "Console Forge ";
+
+     std::cout << " - MackOS \n";
+
+     std::cout << "-> ";
+
+     std::getline(std::cin, command);
     #endif
     system("pause");
     return 0;
