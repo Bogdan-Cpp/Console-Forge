@@ -1,56 +1,26 @@
 #include <iostream>
 
-#ifdef _WIN32
-#include <windows.h>
-#include <conio.h>
+#if defined(_WIN32)
+#include "main_windows.h"
+
+#elif defined(__linux__)
+#include "main_linux.h"
+
+#elif defined(__apple__)
+#include "main_makOS.h"
 
 #endif
-#include <string>
-
 int main(){
+ 
     #ifdef _WIN32
-    SetConsoleTitle("Console Forge");
-    std::string command;
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    
-    do{
-      std::cout << '\n';
-      SetConsoleTextAttribute(h, 3);
-      std::cout << "Console Forge ";
+    main_win();
 
-      SetConsoleTextAttribute(h, 6);
-      std::cout << " - Windows \n";
-
-      SetConsoleTextAttribute(h, 7);
-      std::cout << "-> ";
-
-      std::getline(std::cin, command);
-    }while(command != "exit");
-    
     #elif __linux__
-    std::string command;
-    
-    do{
-      std::cout << '\n';
-      std::cout << "Console Forge ";
+    main_lin();
 
-      std::cout << " - Linux \n";
+    #elif __apple__
+    main_mac();
 
-      std::cout << "-> ";
-
-      std::getline(std::cin, command);
-    }while(command != "exit");
-
-    #elif __APPLE__
-     std::cout << '\n';
-     std::cout << "Console Forge ";
-
-     std::cout << " - MackOS \n";
-
-     std::cout << "-> ";
-
-     std::getline(std::cin, command);
     #endif
-    system("pause");
     return 0;
 }
