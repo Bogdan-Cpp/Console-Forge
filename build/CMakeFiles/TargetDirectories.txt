@@ -1,0 +1,8 @@
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/console_forge.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/Experimental.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/Nightly.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/Continuous.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Bogdan/Documents/Console Forge/build/CMakeFiles/ZERO_CHECK.dir
